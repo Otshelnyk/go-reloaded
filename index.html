@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Текстовый Корректор</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Текстовый корректор</h1>
+        <form id="text-form">
+            <label for="input-text">Введите текст с ошибками:</label>
+            <textarea id="input-text" rows="8" placeholder="Введите текст..."></textarea>
+            <button type="submit">Исправить</button>
+            <div class="hint">Нажмите Enter (или кнопку), чтобы исправить</div>
+        </form>
+        <div class="theme-toggle-btn" id="theme-toggle-btn" title="Переключить тему">
+            <span id="theme-icon">🌞</span>
+        </div>
+        <div id="output-section" style="display:none;">
+            <h2>Исправленный текст</h2>
+            <div id="output-text"></div>
+            <h3>Изменения</h3>
+            <div id="diff"></div>
+        </div>
+        <div id="history-section">
+            <h2>История</h2>
+            <div id="history-list"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

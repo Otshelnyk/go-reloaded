@@ -1,0 +1,197 @@
+body {
+    background: #f4f6fb;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 32px 28px 40px 28px;
+    position: relative;
+}
+h1 {
+    text-align: center;
+    color: #2a3a5e;
+    margin-bottom: 24px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-size: 1.1em;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #cfd8dc;
+    background: #f9fafc;
+}
+button {
+    background: #2a3a5e;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+button:hover {
+    background: #405080;
+}
+#output-section {
+    margin-top: 32px;
+}
+#output-text {
+    background: #f1f8e9;
+    border-radius: 6px;
+    padding: 16px;
+    font-size: 1.1em;
+    margin-bottom: 18px;
+    white-space: pre-wrap;
+}
+#diff {
+    background: #fff3e0;
+    border-radius: 6px;
+    padding: 14px;
+    font-size: 1em;
+    color: #b26a00;
+    white-space: pre-wrap;
+}
+.diff-added {
+    background: #c8e6c9;
+    color: #256029;
+    border-radius: 3px;
+    padding: 0 2px;
+}
+.diff-removed {
+    background: #ffcdd2;
+    color: #b71c1c;
+    border-radius: 3px;
+    padding: 0 2px;
+    text-decoration: line-through;
+}
+.theme-toggle {
+    margin: 18px 0 0 0;
+    text-align: right;
+}
+.theme-toggle label {
+    font-size: 1em;
+    color: #2a3a5e;
+    cursor: pointer;
+}
+.hint {
+    font-size: 0.95em;
+    color: #888;
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+#history-section {
+    margin-top: 36px;
+    background: #f9fafc;
+    border-radius: 8px;
+    padding: 18px 14px;
+}
+#history-section h2 {
+    margin-top: 0;
+    color: #2a3a5e;
+    font-size: 1.1em;
+}
+#history-list > div {
+    margin-bottom: 18px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+#history-list .history-input {
+    color: #607d8b;
+    font-size: 0.98em;
+    margin-bottom: 2px;
+}
+#history-list .history-output {
+    color: #388e3c;
+    font-size: 1.05em;
+    margin-bottom: 2px;
+}
+#history-list .history-diff {
+    font-size: 0.95em;
+}
+/* Тёмная тема */
+body.dark {
+    background: #181c24;
+    color: #e0e6f0;
+}
+body.dark .container {
+    background: #232837;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+}
+body.dark h1, body.dark #history-section h2, body.dark .theme-toggle label {
+    color: #e0e6f0;
+}
+body.dark textarea, body.dark #output-text, body.dark #history-section {
+    background: #232837;
+    color: #e0e6f0;
+    border-color: #374151;
+}
+body.dark #diff, body.dark #history-list .history-diff {
+    background: #2a3142;
+    color: #ffb300;
+}
+body.dark .diff-added {
+    background: #388e3c33;
+    color: #a5d6a7;
+}
+body.dark .diff-removed {
+    background: #b71c1c33;
+    color: #ffcdd2;
+}
+body.dark button {
+    background: #374151;
+    color: #fff;
+}
+body.dark button:hover {
+    background: #232837;
+}
+body.dark .hint {
+    color: #aaa;
+}
+.theme-toggle-btn {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    width: 44px;
+    height: 44px;
+    background: #f4f6fb;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, box-shadow 0.2s;
+    z-index: 10;
+    font-size: 1.7em;
+}
+.theme-toggle-btn:hover {
+    background: #e0e6f0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+body.dark .theme-toggle-btn {
+    background: #232837;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+body.dark .theme-toggle-btn:hover {
+    background: #181c24;
+}
+#theme-icon {
+    transition: transform 0.3s;
+}
+.theme-toggle-btn:active #theme-icon {
+    transform: rotate(40deg) scale(1.1);
+} 
